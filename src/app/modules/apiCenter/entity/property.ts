@@ -40,28 +40,28 @@ export class ApiCenterPropertyEntity extends BaseEntity {
   @Column({ length: 256, nullable: false, comment: '属性名称' })
   name: string;
 
-  @Column({ length: 128, comment: 'property generation rules' })
+  @Column({ length: 128, comment: '值域规则' })
   rule: string;
 
-  @Column({ type: 'text', comment: 'value of this property' })
+  @Column({ type: 'text', comment: '字段值' })
   value: string;
 
-  @Column({ type: 'text', comment: 'description of this property' })
+  @Column({ type: 'text', comment: '属性描述' })
   description: string;
 
   @Column({ default: -1, nullable: false, comment: 'parent property ID' })
   parentId: number;
 
-  @Column()
+  @Column({ default: 0, comment: '接口id' })
   interfaceId: number;
 
-  @Column()
+  @Column({ default: 0, comment: '模块id' })
   moduleId: number;
 
-  @Column()
+  @Column({ default: 0, comment: '仓库id' })
   repositoryId: number;
 
-  @Column()
+  @Column({ default: 0, comment: '是否是必须的' })
   /** 是否为必填选项 */
   required: boolean;
 }
